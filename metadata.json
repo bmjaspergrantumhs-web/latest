@@ -1,0 +1,7 @@
+{
+  "name": "The Garden Architect",
+  "description": "Professional grounds maintenance for private and public facilities. Canada's leader in grass cutting, lawn care, and snow plowing. Founded in 2026 by Boakai Kamara.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
