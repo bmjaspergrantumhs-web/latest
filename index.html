@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden Architect - Bespoke Landscapes & Maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Lora:italic,wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfbf7;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .serif-text {
+            font-family: 'Lora', serif;
+        }
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+        }
+        /* Custom Leaflet Styling */
+        .leaflet-container {
+            background: #fcfbf7 !important;
+        }
+        .leaflet-bar a {
+            background-color: #fcfbf7 !important;
+            color: #064e3b !important;
+            border-bottom: 1px solid #e7e5e4 !important;
+        }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.1.5?external=react,react-dom",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.5?external=react,react-dom",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/latest/assets/index-ZOsWW1za.js"></script>
+</head>
+<body class="text-stone-900">
+    <div id="root"></div>
+</body>
+</html>
