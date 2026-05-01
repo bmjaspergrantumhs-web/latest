@@ -119,16 +119,6 @@ export const PAGE_METADATA: Record<string, Metadata> = {
       images: ['https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=1200&h=630&fit=crop']
     }
   },
-  services: {
-    title: 'Maintenance Services | The Garden Architect',
-    description: 'Comprehensive landscaping services including grass cutting, snow plowing, hedge trimming, and seasonal cleanups.',
-    keywords: ['grass cutting', 'hedge trimming', 'sodding', 'snow plowing', 'planting services'],
-    openGraph: {
-      title: 'Our Maintenance Services - The Garden Architect',
-      description: 'Professional grounds keeping for all properties.',
-      images: [{ url: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1200&h=630&fit=crop' }]
-    }
-  },
   about: {
     title: 'About Us | The Garden Architect Company',
     description: 'Founded in 2026 by CEO Boakai Kamara, The Garden Architect aims to lead Canada in premium grounds maintenance.',
@@ -152,6 +142,26 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     openGraph: {
       title: 'Contact The Garden Architect',
       description: 'Speak with our team about your maintenance needs.'
+    }
+  },
+  residential: {
+    title: 'Residential Landscaping Services | The Garden Architect',
+    description: 'Expert lawn care, garden maintenance, and seasonal cleanups for your home. Keep your private estate pristine year-round.',
+    keywords: ['residential lawn care', 'home garden maintenance', 'private estate landscaping', 'residential snow removal'],
+    openGraph: {
+      title: 'Residential Landscaping & Lawn Care - The Garden Architect',
+      description: 'Bespoke maintenance for your private residence.',
+      images: [{ url: 'https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=1200&h=630&fit=crop' }]
+    }
+  },
+  commercial: {
+    title: 'Commercial Grounds Maintenance | The Garden Architect',
+    description: 'Professional landscaping and snow management for facilities, business parks, and public spaces across Canada.',
+    keywords: ['commercial landscaping', 'facility maintenance', 'corporate grounds keeping', 'commercial snow plowing'],
+    openGraph: {
+      title: 'Commercial & Facility Grounds Management - The Garden Architect',
+      description: 'Reliable stewardship for high-traffic commercial environments.',
+      images: [{ url: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=1200&h=630&fit=crop' }]
     }
   }
 };

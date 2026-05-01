@@ -9,10 +9,10 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
+    { name: 'Residential', path: '/services/residential' },
+    { name: 'Commercial', path: '/services/commercial' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Gallery', path: '/gallery' },
   ];
 
   useEffect(() => {

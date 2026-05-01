@@ -60,7 +60,7 @@ const Footer = () => (
       <div className="border-t border-stone-900 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-600">
         <div className="flex flex-col gap-1">
           <p>&copy; 2026 The Garden Architect Company. All Rights Reserved.</p>
-          <p className="opacity-50">Stewardship under Mr. Boakai Kamara, CEO.</p>
+          <p className="opacity-50">Dev @AJtech.</p>
         </div>
         <Link to="/admin" className="opacity-0 hover:opacity-100 transition-opacity font-bold">Internal Audit</Link>
         <p className="mt-4 md:mt-0 font-bold">Toronto • Vancouver • Ottawa</p>

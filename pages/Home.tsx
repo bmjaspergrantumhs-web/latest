@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES, TESTIMONIALS, PROJECTS, PAGE_METADATA } from '../constants';
@@ -20,6 +19,19 @@ const Home = () => {
     const timer = setInterval(nextProject, 8000);
     return () => clearInterval(timer);
   }, []);
+
+  // Mapping specific images to services for a better visual fit
+  const serviceImages: Record<string, string> = {
+    'weekly-cutting': 'https://images.unsplash.com/photo-1746436576978-21632bf9790d?auto=format&fit=crop&q=80&w=800',
+    'garden-maintenance': 'https://images.unsplash.com/photo-1709734023466-b6f3d33817ae?auto=format&fit=crop&q=80&w=800',
+    'lawn-nutrition': 'https://images.unsplash.com/photo-1734303023491-db8037a21f09?auto=format&fit=crop&q=80&w=800',
+    'seasonal-cleanup': 'https://images.unsplash.com/photo-1635878139456-2459d314d961?auto=format&fit=crop&q=80&w=800',
+    'soil-mulch': 'https://images.unsplash.com/photo-1737044225787-ef49f031ff79?auto=format&fit=crop&q=80&w=800',
+    'planting-services': 'https://images.unsplash.com/photo-1621460248083-6271cc4437a8?auto=format&fit=crop&q=80&w=800',
+    'hedge-trimming': 'https://plus.unsplash.com/premium_photo-1678656484475-1febee151440?auto=format&fit=crop&q=80&w=800',
+    'sodding-overseeding': 'https://plus.unsplash.com/premium_photo-1661412696440-044ac49f9cf4?auto=format&fit=crop&q=80&w=800',
+    'snow-plowing': 'https://images.unsplash.com/photo-1642586078463-a2582692fcc6?auto=format&fit=crop&q=80&w=800'
+  };
 
   return (
     <div>
@@ -50,10 +62,16 @@ const Home = () => {
               Get a Free Estimate
             </Link>
             <Link 
-              to="/services" 
+              to="/services/residential" 
               className="bg-transparent hover:bg-white/5 text-white border border-white/20 px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.3em] transition-all text-center backdrop-blur-sm"
             >
-              Our Services
+              Residential
+            </Link>
+            <Link 
+              to="/services/commercial" 
+              className="bg-transparent hover:bg-white/5 text-white border border-white/20 px-10 py-5 rounded-sm font-bold text-xs uppercase tracking-[0.3em] transition-all text-center backdrop-blur-sm"
+            >
+              Commercial
             </Link>
           </div>
         </div>
@@ -92,6 +110,43 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Specialized Paths Section */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <Link to="/services/residential" className="group relative overflow-hidden h-[500px] flex items-end p-12 shadow-2xl">
+              <img 
+                src="https://plus.unsplash.com/premium_photo-1678656484475-1febee151440?auto=format&fit=crop&q=80&w=2000" 
+                alt="Residential Services" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+              <div className="relative z-10">
+                <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.5em] block mb-4">For Homeowners</span>
+                <h3 className="text-4xl font-bold text-white brand-font mb-6">Residential Estates</h3>
+                <p className="text-stone-300 mb-8 max-w-sm serif-text italic">Bespoke maintenance for private residences and luxury estates.</p>
+                <span className="inline-block bg-white text-stone-950 px-8 py-4 text-[10px] font-bold uppercase tracking-widest group-hover:bg-emerald-600 group-hover:text-white transition-all">Explore Residential</span>
+              </div>
+            </Link>
+
+            <Link to="/services/commercial" className="group relative overflow-hidden h-[500px] flex items-end p-12 shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1709734023466-b6f3d33817ae?auto=format&fit=crop&q=80&w=2000" 
+                alt="Commercial Services" 
+                className="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110 group-hover:grayscale-0"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+              <div className="relative z-10">
+                <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.5em] block mb-4">For Facilities</span>
+                <h3 className="text-4xl font-bold text-white brand-font mb-6">Commercial Grounds</h3>
+                <p className="text-stone-300 mb-8 max-w-sm serif-text italic">Reliable stewardship for business parks, retail, and public spaces.</p>
+                <span className="inline-block bg-emerald-900 text-white px-8 py-4 text-[10px] font-bold uppercase tracking-widest group-hover:bg-white group-hover:text-stone-950 transition-all">Explore Commercial</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Services Showcase */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +160,11 @@ const Home = () => {
             {SERVICES.slice(0, 3).map((service) => (
               <div key={service.id} className="group flex flex-col">
                 <div className="mb-10 overflow-hidden relative aspect-video rounded-sm shadow-sm">
-                   <img src={`https://picsum.photos/600/400?random=${service.id}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={service.title} />
+                   <img 
+                    src={serviceImages[service.id] || "https://images.unsplash.com/photo-1709734023466-b6f3d33817ae?auto=format&fit=crop&q=80&w=600"} 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    alt={service.title} 
+                   />
                    <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <h4 className="text-xl font-bold mb-4 text-emerald-950 uppercase tracking-widest">{service.title}</h4>
@@ -119,7 +178,9 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center mt-20">
-             <Link to="/services" className="text-xs font-bold uppercase tracking-[0.4em] border-b border-stone-200 pb-2 hover:border-emerald-900 transition-all">View All Maintenance Protocols</Link>
+             <Link to="/services/residential" className="text-xs font-bold uppercase tracking-[0.4em] border-b border-stone-200 pb-2 hover:border-emerald-900 transition-all">View Residential Protocols</Link>
+             <span className="mx-6 text-stone-300">|</span>
+             <Link to="/services/commercial" className="text-xs font-bold uppercase tracking-[0.4em] border-b border-stone-200 pb-2 hover:border-emerald-900 transition-all">View Commercial Protocols</Link>
           </div>
         </div>
       </section>

@@ -48,7 +48,7 @@ const SEO: React.FC<SEOProps> = ({ metadata }) => {
         </>
       )}
     </Helmet>
-  ) || null;
+  );
 };
 
 export default SEO;
