@@ -10,11 +10,8 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-<<<<<<< HEAD
       base: '/latest/',
-=======
       base: '/-latest/'
->>>>>>> f9fe36653aa8687896af87ad4269b96d61cd7fda
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
